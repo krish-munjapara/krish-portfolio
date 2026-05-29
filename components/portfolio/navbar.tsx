@@ -89,7 +89,7 @@ export function Navbar() {
               </Button>
             </Link>
             <Button asChild className="gap-2">
-              <a href="/krish.resume.pdf" download>
+              <a href="/Krish.resume.pdf" download>
                 <Download className="h-4 w-4" />
                 Resume
               </a>
@@ -150,7 +150,7 @@ export function Navbar() {
                   </Button>
                 </Link>
                 <Button asChild className="flex-1 gap-2">
-                  <a href="/resume.pdf" download>
+                  <a href="/Krish.resume.pdf" download>
                     <Download className="h-4 w-4" />
                     Download Resume
                   </a>
