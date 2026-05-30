@@ -149,24 +149,28 @@ export const achievements = [
     description: "98.79 Percentile - Scored in the top 1.21% of participants",
     icon: "trophy",
     link: "/achievements/naukri-scorecard.pdf",
+      type: "achievement",
   },
   {
     title: "PU Code Hackathon 3.0",
     description: "Participant - Competitive hackathon at Parul University",
     icon: "code",
     link: "/achievements/hackathon-certificate.pdf",
+      type: "event",
   },
   {
     title: "250+ DSA Problems Solved",
     description: "Solved 250+ coding problems across LeetCode and coding platforms",
     icon: "code",
     link: "https://leetcode.com/u/krish2509/",
+      type: "milestone",
   },
   {
     title: "ISRO AI/ML Workshop",
     description: "Completed ISRO-IIRS workshop on AI/ML Models for Crop Acreage Mapping",
     icon: "brain",
     link: "/achievements/isro-certificate.pdf",
+      type: "project",
   },
 ]
 
