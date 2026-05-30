@@ -10,7 +10,7 @@ export const personalInfo = {
 }
 
 export const animatedRoles = [
-  "Data Analytics Enthusiast",
+  "AI & Data Analytics Developer",
   "Full Stack Developer",
   "Problem Solver",
 ]
@@ -143,26 +143,30 @@ export const certifications = [
   },
 ]
 
-export const experiences = [
+export const achievements = [
   {
     title: "Naukri Campus Young Turks 2025",
     description: "98.79 Percentile - Scored in the top 1.21% of participants",
-    type: "achievement",
+    icon: "trophy",
+    link: "/achievements/naukri-scorecard.pdf",
   },
   {
     title: "PU Code Hackathon 3.0",
     description: "Participant - Competitive hackathon at Parul University",
-    type: "event",
+    icon: "code",
+    link: "/achievements/hackathon-certificate.pdf",
   },
   {
-    title: "AI Project Development",
-    description: "Built production-ready AI applications using modern technologies",
-    type: "project",
+    title: "250+ DSA Problems Solved",
+    description: "Solved 250+ coding problems across LeetCode and coding platforms",
+    icon: "code",
+    link: "https://leetcode.com/u/krish2509/",
   },
   {
-    title: "Data Analytics Projects",
-    description: "Created dashboard solutions and visual insights",
-    type: "project",
+    title: "ISRO AI/ML Workshop",
+    description: "Completed ISRO-IIRS workshop on AI/ML Models for Crop Acreage Mapping",
+    icon: "brain",
+    link: "/achievements/isro-certificate.pdf",
   },
 ]
 
