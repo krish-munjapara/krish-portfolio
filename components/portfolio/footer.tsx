@@ -26,7 +26,6 @@ export function Footer() {
             <p className="text-muted-foreground text-sm leading-relaxed">
               {personalInfo.title}
               <br />
-              <span className="text-primary">({personalInfo.specialization})</span>
             </p>
             <p className="text-muted-foreground text-sm italic">
               &quot;Building software solutions with data-driven thinking.&quot;

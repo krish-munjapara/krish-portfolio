@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Krish Munjapara",
-  title: "Software Developer",
+  title: "Big Data Analytics Student",
   tagline: "Building AI-powered applications, data-driven dashboards, and scalable software solutions.",
   location: "Vadodara, Gujarat, India",
   email: "munjaparakrish25@gmail.com",
@@ -10,8 +10,6 @@ export const personalInfo = {
 }
 
 export const animatedRoles = [
-  "Software Developer",
-  "AI Application Developer",
   "Data Analytics Enthusiast",
   "Full Stack Developer",
   "Problem Solver",
@@ -123,21 +121,25 @@ export const certifications = [
     title: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
     issuer: "Oracle",
     link: "/certificates/oracle-data-science.pdf",
+     icon: "award",
   },
   {
     title: "Oracle Data Platform 2025 Certified Foundations Associate",
     issuer: "Oracle",
     link: "/certificates/oracle-data-platform.pdf",
+     icon: "award",
   },
   {
     title: "Deloitte Data Analytics Job Simulation",
     issuer: "Forage",
     link: "/certificates/deloitte-data-analytics.pdf",
+     icon: "award",
   },
   {
     title: "Getting Started with Artificial Intelligence",
     issuer: "IBM SkillsBuild",
     link: "/certificates/ibm-ai.pdf",
+     icon: "award",
   },
 ]
 
