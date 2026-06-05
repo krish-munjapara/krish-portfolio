@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { personalInfo } from "@/data/portfolio-data"
 import emailjs from "@emailjs/browser"
+import { toast } from "sonner"
 
 const contactInfo = [
   {
@@ -49,10 +50,14 @@ export function Contact() {
     email: "",
     subject: "",
     message: "",
+    
   })
+const [isSending, setIsSending] = useState(false)
 
- const handleSubmit = async (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault()
+
+  setIsSending(true)
 
   try {
     await emailjs.send(
@@ -67,17 +72,20 @@ export function Contact() {
       "fTZAicnMiDMXdy5Xz"
     )
 
-    alert("Message sent successfully!")
+    toast.success("Thanks for reaching out! I'll get back to you soon 🚀")
 
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: "",
+      
     })
   } catch (error) {
     console.error("EmailJS Error:", error)
-    alert("Failed to send message.")
+    toast.error("Failed to send message ❌")
+  } finally {
+    setIsSending(false)
   }
 }
 
@@ -239,9 +247,19 @@ export function Contact() {
                   className="bg-card resize-none"
                 />
               </div>
-              <Button type="submit" className="w-full">
-                <Send className="h-4 w-4 mr-2" />
-                Send Message
+              <Button
+                type="submit"
+                className="w-full"
+                disabled={isSending}
+              >
+                {isSending ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    <Send className="h-4 w-4 mr-2" />
+                    Send Message
+                  </>
+                )}
               </Button>
             </form>
           </motion.div>

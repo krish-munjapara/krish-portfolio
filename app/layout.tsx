@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -67,9 +68,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster richColors position="top-right" />
         </ThemeProvider>
 
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+{process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
