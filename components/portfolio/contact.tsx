@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { personalInfo } from "@/data/portfolio-data"
+import emailjs from "@emailjs/browser"
 
 const contactInfo = [
   {
@@ -50,15 +51,35 @@ export function Contact() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent(
-      formData.subject || "Contact from Portfolio"
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`
-    window.open(mailtoLink, "_blank")
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+
+  try {
+    await emailjs.send(
+      "service_d5fiksf",
+      "template_b48jqfa",
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      "fTZAicnMiDMXdy5Xz"
+    )
+
+    alert("Message sent successfully!")
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
+  } catch (error) {
+    console.error("EmailJS Error:", error)
+    alert("Failed to send message.")
   }
+}
 
   return (
     <section id="contact" className="py-20 lg:py-16 px-4">
@@ -218,8 +239,8 @@ export function Contact() {
                   className="bg-card resize-none"
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full gap-2">
-                <Send className="h-4 w-4" />
+              <Button type="submit" className="w-full">
+                <Send className="h-4 w-4 mr-2" />
                 Send Message
               </Button>
             </form>
